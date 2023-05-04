@@ -1,14 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Task Manager API",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon src/index.js",
+    "start":"nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Diallo Dev",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

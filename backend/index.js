@@ -1,14 +1,12 @@
 const express =  require("express");
-const dotenv = require('dotenv');
 const cors = require('cors');
+require('dotenv').config();
 
 const router = require("./routes/task");
 const connectDB = require('./db');
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
-// environment config
-dotenv.config();
 
 
 
@@ -34,7 +32,9 @@ app.use("/api/v1/tasks", router);
 
 const start = async () => {
   try {
-    // await connectDB(process.env.MONGO_URI);
+    await connectDB(process.env.MONGO_URI);
+    // console.log('URI: ' +process.env)
+    console.log('PORT: ' +process.env.PORT)
     app.listen(PORT, console.log(`App is running on port: http://localhost:${PORT}`)
     )
   } catch (error) {
